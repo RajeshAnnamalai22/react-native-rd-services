@@ -113,8 +113,9 @@ public class RdServicesModule extends ReactContextBaseJavaModule {
     intent.setAction("in.gov.uidai.rdservice.fp.CAPTURE");
     intent.putExtra("PID_OPTIONS", pidOption);
 
-
-    if (PckName.equalsIgnoreCase("com.scl.rdservice")) {
+    if (PckName.equalsIgnoreCase("co.aratek.asix_gms.rdservice")) {
+      intent.setPackage("co.aratek.asix_gms.rdservice");
+    } else if (PckName.equalsIgnoreCase("com.scl.rdservice")) {
       intent.setPackage("com.scl.rdservice");
     } else if (PckName.equalsIgnoreCase("com.mantra.rdservice")) {
       intent.setPackage("com.mantra.rdservice");
@@ -126,10 +127,8 @@ public class RdServicesModule extends ReactContextBaseJavaModule {
       intent.setPackage("com.secugen.rdservice");
     } else if (PckName.equalsIgnoreCase("com.acpl.registersdk")) {
       intent.setPackage("com.acpl.registersdk");
-    } else if (
-      PckName.equalsIgnoreCase("co.aratek.asix_gms.rdservice")
-    ) {
-      intent.setPackage("co.aratek.asix_gms.rdservice");
+    } else if (PckName.equalsIgnoreCase("com.nextbiometrics.rdservice")) {
+      intent.setPackage("com.nextbiometrics.rdservice");
     } else {
       resolve(FAILURE, "RD services Package not found");
     }
